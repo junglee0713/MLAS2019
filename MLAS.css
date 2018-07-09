@@ -1,0 +1,12 @@
+.title-slide {
+  background-color: #fff;
+  color: #000;
+  background-image: url(https://www.sidefx.com/media/uploads/school/drexel/drexel_logo_banner.jpg);
+	background-position: center bottom 30px;
+	background-size: 30%;
+	text-shadow: 0 0 20px #fff
+}
+
+.title-slide h1, .title-slide h2, .title-slide h3 {
+  color: #000;
+}

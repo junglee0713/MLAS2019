@@ -1,0 +1,83 @@
+---
+title: "Lecture 1"
+author: "Jung-Jin Lee"
+date: "Jan 7, 2019"
+output:
+  xaringan::moon_reader:
+    css: ["default", "default-fonts", "MLAS.css"] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      
+---
+```{r, message = F, echo = F, warning = F}
+library(tidyverse)
+library(knitr) 
+opts_chunk$set(
+  tidy = FALSE,
+  cache = FALSE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  dpi = 300,
+  fig.align = "center",
+  fig.width = 3,
+  fig.height = 3
+  )
+```
+
+# Installing R/RStudio
+
+- To install R, go to https://www.r-project.org/ and follow instruction there
+    - Click on CRAN under Download on the left
+    - Choose the closest mirror site (e.g. http://lib.stat.cmu.edu/R/CRAN/)
+    - Download R for your platform (Windows/Mac/Linux)
+    
+- To install RStudio (an integrated development environment for R), go to https://www.rstudio.com/ and follow instruction
+
+---
+
+# R as a calculator
+
+```{r}
+5 + 3
+```
+
+```{r}
+# everything after # (pound sign) is ignored
+# useful for comments
+2 * 5 # sum of 2 and 5
+```
+ 
+---
+
+# Numerical variables
+
+Variables can be used to store numerical values. 
+
+- A variable can be a combination of letters (case sensitive), digits, period (.) and underscore (_).
+- It must start with a letter or a period. If it starts with a period, it cannot be followed by a digit.
+- Reserved words in R, such as `TRUE`, cannot be used as variables.
+
+```{r}
+Num1 <- 5; Num2 <- 3 # semicolon (;) can be used to separate lines
+sum_num <- Num1 + Num2
+prod.num <- Num1 * Num2
+print(sum_num) 
+print(prod.num)
+```
+
+---
+
+# Next
+
+```{r, out.width = "50%", out.height = "20%"}
+g <- ggplot() + 
+  geom_point(aes(x = 1:4, y = 2:5)) +
+  theme(aspect.ratio = 1)
+print(g)
+```
+
+

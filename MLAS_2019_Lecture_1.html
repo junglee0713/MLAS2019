@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 1</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Jung-Jin Lee" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="MLAS.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lecture 1
+### Jung-Jin Lee
+### Jan 7, 2019
+
+---
+
+
+
+# Installing R/RStudio
+
+- To install R, go to https://www.r-project.org/ and follow instruction there
+    - Click on CRAN under Download on the left
+    - Choose the closest mirror site (e.g. http://lib.stat.cmu.edu/R/CRAN/)
+    - Download R for your platform (Windows/Mac/Linux)
+    
+- To install RStudio (an integrated development environment for R), go to https://www.rstudio.com/ and follow instruction
+
+---
+
+# R as a calculator
+
+
+```r
+5 + 3
+```
+
+```
+## [1] 8
+```
+
+
+```r
+# everything after # (pound sign) is ignored
+# useful for comments
+2 * 5 # sum of 2 and 5
+```
+
+```
+## [1] 10
+```
+ 
+---
+
+# Numerical variables
+
+Variables can be used to store numerical values. 
+
+- A variable can be a combination of letters (case sensitive), digits, period (.) and underscore (_).
+- It must start with a letter or a period. If it starts with a period, it cannot be followed by a digit.
+- Reserved words in R, such as `TRUE`, cannot be used as variables.
+
+
+```r
+Num1 &lt;- 5; Num2 &lt;- 3 # semicolon (;) can be used to separate lines
+sum_num &lt;- Num1 + Num2
+prod.num &lt;- Num1 * Num2
+print(sum_num) 
+```
+
+```
+## [1] 8
+```
+
+```r
+print(prod.num)
+```
+
+```
+## [1] 15
+```
+
+---
+
+# Next
+
+
+```r
+g &lt;- ggplot() + 
+  geom_point(aes(x = 1:4, y = 2:5)) +
+  theme(aspect.ratio = 1)
+print(g)
+```
+
+&lt;img src="MLAS_2019_Lecture_1_files/figure-html/unnamed-chunk-5-1.png" width="50%" height="20%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

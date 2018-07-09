@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : ".title-slide {\n  background-color: #fff;\n  color: #000;\n  background-image: url(https://www.sidefx.com/media/uploads/school/drexel/drexel_logo_banner.jpg);\n\tbackground-position: center bottom 30px;\n\tbackground-size: 30%;\n\ttext-shadow: 0 0 20px #fff\n}\n\n.title-slide h1, .title-slide h2, .title-slide h3 {\n  color: #000;\n}",
+    "created" : 1531089294076.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "344109446",
+    "id" : "851EFF48",
+    "lastKnownWriteTime" : 1531100557,
+    "last_content_update" : 1531100557289,
+    "path" : "~/Dropbox/MLAS2019/MLAS.css",
+    "project_path" : "MLAS.css",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "css"
+}
