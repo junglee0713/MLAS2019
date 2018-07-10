@@ -13,7 +13,7 @@ output:
       
 ---
 ```{r, message = F, echo = F, warning = F}
-library(tidyverse)
+library(tidyverse) 
 library(knitr) 
 opts_chunk$set(
   tidy = FALSE,
@@ -48,12 +48,12 @@ opts_chunk$set(
 ```{r}
 # everything after # (pound sign) is ignored
 # useful for comments
-2 * 5 # sum of 2 and 5
+2 * 5 # product of 2 and 5
 ```
  
 ---
 
-# Numerical variables
+# Variables
 
 Variables can be used to store numerical values. 
 
@@ -68,6 +68,20 @@ prod.num <- Num1 * Num2
 print(sum_num) 
 print(prod.num)
 ```
+
+---
+
+# Characters
+
+Variables can also be used to store character values.
+
+```{r}
+first_name <- "John" # use quotation marks for character strings
+last_name <- 'Smith' # single quotation also works
+print(first_name)
+print(last_name)
+```
+
 
 ---
 
