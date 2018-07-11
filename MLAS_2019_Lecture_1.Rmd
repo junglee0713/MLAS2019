@@ -28,7 +28,7 @@ opts_chunk$set(
   )
 ```
 
-# Installing R/RStudio
+## Installing R/RStudio
 
 - To install R, go to https://www.r-project.org/ and follow instruction there
     - Click on CRAN under Download on the left
@@ -39,7 +39,7 @@ opts_chunk$set(
 
 ---
 
-# R as a calculator
+## R as a calculator
 
 ```{r}
 5 + 3
@@ -50,10 +50,18 @@ opts_chunk$set(
 # useful for comments
 2 * 5 # product of 2 and 5
 ```
- 
+
+```{r}
+3^2
+```
+
+```{r}
+3**2
+```
+
 ---
 
-# Variables
+## Variables
 
 Variables can be used to store numerical values. 
 
@@ -71,7 +79,7 @@ print(prod.num)
 
 ---
 
-# Characters
+## Characters
 
 Variables can also be used to store character values.
 
@@ -82,10 +90,126 @@ print(first_name)
 print(last_name)
 ```
 
+---
+
+## Functions
+
+One or more values can produce new one using R functions.
+
+```{r}
+a <- 1; b <- 3
+s <- sum(a, b) # sum() is a function that computes the sum
+print(s)
+```
+
+```{r}
+first_name <- "John" 
+last_name <- "Smith"
+# paste() puts together multiple character strings
+full_name <- paste(first_name, last_name) 
+print(full_name)
+```
+
+For detailed usage of a function, type `help(function_name)`, e.g. `help(paste)` or `?function_name`, e.g. `?paste`.
 
 ---
 
-# Next
+## Vectors
+
+Multiple numerical values or characters can be saved as a single variable using an R function `c()`.
+
+```{r}
+vec1 <- c(2,3,5,7,1,4)
+print(vec1)
+```
+
+```{r}
+vec2 <- c("Drexel", "Univ", "School", "of", "Medicine")
+print(vec2)
+```
+
+---
+
+## Functions applied to a vector
+
+```{r}
+length(vec1)
+```
+
+```{r}
+sum(vec1)
+```
+
+```{r}
+DUSoM <- paste(vec2, collapse = " ")
+print(DUSoM)
+```
+
+```{r}
+DUSoM2 <- paste(vec2, collapse = "_")
+print(DUSoM2)
+```
+
+---
+
+## Vector manipulation
+
+Use brackets `[]` to extract components of a vector.
+
+```{r}
+a <- vec1[3]
+print(a)
+```
+
+```{r}
+dm <- vec2[c(1, 5)]
+print(dm)
+```
+
+---
+
+## Special vectors -- part I
+
+Exercise: compute the sum $1 + 2 + 3 + \cdots + 10$.
+
+```{r}
+w1 <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+sum(w1)
+```
+
+```{r}
+# colon (:) can be used to generate a vector consisting of 
+# consecutive numbers
+w2 <- 1:10
+print(w2)
+sum(w2)
+```
+
+---
+
+## Special vectors -- part II
+
+Exercise: compute the sum $2 + 4 + 6 +\cdots + 20$.
+
+```{r}
+# one can use a function seq()
+# type ?seq to get help
+w3 <- seq(2, 20, by = 2)
+sum(w3)
+```
+
+Alternatively, one can use the previous vector:
+
+```{r}
+w4 <- 2*w1 # product of a single numner and a vector
+print(w4)
+sum(w4)
+```
+
+
+---
+
+## Next
 
 ```{r, out.width = "50%", out.height = "20%"}
 g <- ggplot() + 
