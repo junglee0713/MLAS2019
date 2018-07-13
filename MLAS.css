@@ -10,3 +10,12 @@
 .title-slide h1, .title-slide h2, .title-slide h3 {
   color: #000;
 }
+
+.small { 
+  padding-top: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 25px;
+  font-size: 70%; }
+
+.large { font-size: 140%; }

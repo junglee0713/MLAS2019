@@ -6,6 +6,7 @@ output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "MLAS.css"] 
     lib_dir: libs
+    font-size : "30%"
     nature:
       highlightStyle: github
       highlightLines: true
@@ -14,6 +15,7 @@ output:
 ---
 ```{r, message = F, echo = F, warning = F}
 library(tidyverse) 
+library(DT)
 library(knitr) 
 opts_chunk$set(
   tidy = FALSE,
@@ -36,6 +38,18 @@ opts_chunk$set(
     - Download R for your platform (Windows/Mac/Linux)
     
 - To install RStudio (an integrated development environment for R), go to https://www.rstudio.com/ and follow instruction
+
+---
+
+## Why R? 
+
+- Specialized for data analysis
+
+- Many packages have been developed and are available
+
+- Excellent graphics
+
+- Free!
 
 ---
 
@@ -182,7 +196,7 @@ sum(w1)
 # consecutive numbers
 w2 <- 1:10
 print(w2)
-sum(w2)
+sum(w2) 
 ```
 
 ---
@@ -206,16 +220,162 @@ print(w4)
 sum(w4)
 ```
 
+---
+
+## Data frame
+
+Vectors of an equal length can be combined to form a data frame.
+
+```{r}
+# use of the function data.frame()
+first_name <- c("Lisa", "John", "Chuck", "Matt")
+last_name <- c("Simpson", "Smith", "Williams", "June")
+age_yrs <- c(8, 42, 81, 23)
+book <- data.frame(first = first_name,
+                        last = last_name,
+                        age = age_yrs)
+print(book)
+dim(book) # dimensions of a data frame: dim()
+```
 
 ---
 
-## Next
+## Handling data frames
 
-```{r, out.width = "50%", out.height = "20%"}
-g <- ggplot() + 
-  geom_point(aes(x = 1:4, y = 2:5)) +
-  theme(aspect.ratio = 1)
-print(g)
+```{r}
+# extract a single element from a data frame
+book[2, 3]
+# extract a column: use $
+age_extracted <- book$age
+print(age_extracted)
+# extract a row
+book[4, ]
+```
+
+---
+
+## Reading a data file 
+
+```{r}
+# heights.txt is a space-delimited file 
+# consisting of 1375 observations
+# of mom/daughter age height pairs
+d <- read.table(file = "heights.txt", header = TRUE, sep = " ")
+```
+
+A glance at a data frame:
+
+```{r}
+dim(d) # dimension
+names(d) # variable(column) names
+```
+
+---
+
+## Inspecting a data frame
+
+```{r}
+head(d) # first few rows (6 rows by default)
+tail(d) # last few rows
+```
+
+---
+
+## A closer look at the data
+
+```{r, echo = FALSE}
+d %>% datatable(fillContainer = FALSE, options = list(pageLength = 8)) %>%
+  formatStyle(columns = 0:2, fontSize = '80%')
+```
+
+---
+
+## Example: find the sample mean of mom's heights
+
+Recall that the sample mean is given by sum of samples divided by the number of samples:
+$$\bar{x} = \frac{x_1+x_2+\cdots+x_n}{n}$$
+
+```{r}
+mom <- d$Mheight
+s <- sum(mom)
+n <- length(mom)
+mom_height_mean <- s/n
+print(mom_height_mean)
+```
+
+R has a built in function to compute the mean:
+
+```{r}
+# mean() gives the mean of a vector
+mean(mom)
+```
+
+---
+
+## Sample variance
+
+The sample variance measures spread of given data:
+$$s^2 =\frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n-1}.$$
+Note that the denominagor is $n-1$, not $n$.
+
+R has a built in function to compute the mean:
+
+```{r}
+var(mom) # var() gives the mean of a vector
+```
+
+One could also compute the sample variance using the definition:
+
+```{r}
+v1 <- mom-mean(mom); v2 <- v1^2
+sum(v2)/(length(mom)-1)
+```
+
+---
+
+## Histogram
+
+The first step of data analysis is often data visualization. A histogram is a good tool to understand the range and frequency of given data.
+
+```{r, out.height = "40%", out.width = '40%'}
+library(tidyverse)
+g1 <- ggplot(d, aes(x = Mheight)) + geom_histogram()
+print(g1)
+```
+
+---
+
+## Box plot
+
+Box plots are great to quickly check the range and outliers of numerical data.
+
+```{r, out.width = "40%"}
+# you don't need to worry about the code below for now
+g2 <- d %>% gather(key = MomDaughter, value = Height) %>%
+  ggplot(aes(x = MomDaughter, y = Height)) +
+  geom_boxplot()
+print(g2)
+```
+
+---
+
+## Scatter plot
+
+Scatter plots are useful when finding the association of two sets of numerical data.
+
+```{r, out.width = "45%"}
+g3 <- ggplot(d, aes(x = Mheight, y = Dheight)) + geom_point()
+print(g3)
+```
+
+
+---
+
+## Even more fun stuff with R!
+
+```{r out.width='100%', out.height='60%'}
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(-75.1659, 39.9569, zoom = 15)
 ```
 
 
