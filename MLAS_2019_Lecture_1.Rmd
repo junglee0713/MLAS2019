@@ -6,7 +6,6 @@ output:
   xaringan::moon_reader:
     css: ["default", "default-fonts", "MLAS.css"] 
     lib_dir: libs
-    font-size : "30%"
     nature:
       highlightStyle: github
       highlightLines: true
