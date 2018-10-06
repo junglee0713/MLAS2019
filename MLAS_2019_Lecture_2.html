@@ -21,6 +21,17 @@ class: center, middle, inverse, title-slide
 
 
 ## Normal distribution
+
+- A continuous random variable `\(X\)` is said to follow a _normal distribution_ `\(N(\mu, \sigma^2)\)` if the probability `\(P(a\leq X \leq b)\)` that `\(X\)` is between `\(a\)` and `\(b\)` is given by 
+`$$P(a\leq X \leq b) = \int_a^b \phi_{\mu,\sigma}(x)\,dx,$$`
+where `$$\phi_{\mu,\sigma}(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$`
+- `\(\phi_{\mu,\sigma}(x)\)` is a bell-shaped funcition called the probability distribution function (pdf) of `\(X\)`. `\(\mu\)` is called the _mean_ and `\(\sigma\)` is called the _standard deviaition_.
+
+- In particular, if `\(\mu = 0\)` and `\(\sigma =1\)`, `\(X\)` is said to follow the _standard_ normal distribution.
+
+---
+
+## Normal pdf
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({

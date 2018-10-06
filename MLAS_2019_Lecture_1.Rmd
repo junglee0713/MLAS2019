@@ -132,7 +132,7 @@ For detailed usage of a function, type `help(function_name)`, e.g. `help(paste)`
 Multiple numerical values or characters can be saved as a single variable using an R function `c()`.
 
 ```{r}
-vec1 <- c(2,3,5,7,1,4)
+vec1 <- c(2, 3, 5, 7, 1, 4)
 print(vec1)
 ```
 
@@ -214,7 +214,7 @@ sum(w3)
 Alternatively, one can use the previous vector:
 
 ```{r}
-w4 <- 2*w1 # product of a single numner and a vector
+w4 <- 2*w1 # product of a single number and a vector
 print(w4)
 sum(w4)
 ```
